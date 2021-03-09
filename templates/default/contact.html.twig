@@ -1,0 +1,42 @@
+{% extends 'default/layout.html.twig' %}
+
+
+{% block header %}
+	<h1>Nous Contacter</h1>
+{% endblock %}
+
+{% block body %}
+
+	{% block stylesheets %}
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	{% endblock %}
+
+	<p>Nous sommes actuellement le :
+		{{ 'now'|date('d/m/Y H:i:s') }}
+	</p>
+
+	{{ form_start(form) }}
+	{{ form_row(form.email, {
+         'attr': {
+           'class': "form-control"
+         },
+
+       }) }}
+	{{ form_row(form.subject, {
+         'attr': {
+           'class': "form-control"
+         }
+       }) }}
+	{{ form_row(form.message, {
+         'attr': {
+           'class': "form-control"
+         }
+       }) }}
+
+	{{ form_rest(form) }}
+	<button type="submit" class="btn btn-danger">Valider</button>
+	{{ form_end(form) }}
+
+	{{ form_end(form) }}
+
+{% endblock %}

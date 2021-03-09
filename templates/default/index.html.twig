@@ -1,0 +1,29 @@
+{% extends 'default/layout.html.twig' %}
+
+
+{% block body %}
+
+	{% block header %}
+		<h1>{{ 'un titre magnifique'|capitalize }}</h1>
+
+	{% endblock %}
+
+	{% for contact in contacts %}
+		<table>
+			<tr>
+				<td>
+					{{ contact.email }}
+				</td>
+				<td>
+					{{ contact.subject }}
+				</td>
+				<td>
+					{{ contact.message }}
+				</td>
+
+			</tr>
+		</table>
+	{% endfor %}
+
+
+{% endblock %}
